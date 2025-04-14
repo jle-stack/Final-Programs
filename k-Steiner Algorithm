@@ -4193,7 +4193,7 @@ def concatenation_lazy(FST_set, terminal_no, max_steiner_no):
 
             xvalues = [x for x in model._vars if x_values[x] > 0.5]
 
-            # Calculate the number of components (however you define it)
+            # Calculate the number of components
             num_components, components = calculate_num_components(xvalues)
 
             # Add lazy constraint based on the number of components
@@ -4295,7 +4295,7 @@ def concatenation_lazy(FST_set, terminal_no, max_steiner_no):
     for i in range(FST_no):
         xvalues[i] = x[i].x
 
-    # Calculate the number of components (however you define it)
+    # Calculate the number of components
     num_components, components = calculate_num_components(xvalues)
 
     htree = [i for i in range(FST_no) if x[i].X > 0.5]
