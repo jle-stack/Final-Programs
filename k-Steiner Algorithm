@@ -28,6 +28,8 @@ global plot_on
 global print_deg4_additional_stats
 global N
 
+global adj_deg4_on
+
 global post_proc_on
 global post_lune_on
 global post_bottle_on
@@ -46,6 +48,8 @@ alpha_rhombus_on = True
 second_ar_on = True
 vertical_lunes_on = True
 source_angle_on = True
+
+adj_deg4_on = False
 
 compatibility_test_on = False
 
@@ -2955,6 +2959,10 @@ def triple_merge(b1, b2, b3):
             left_check = (right_check[0] + 1) % len(hull_vertices)
             if hull_vertices[left_check] == b3[3][0]:
                 return 0
+    
+    if adj_deg4_on == True:
+        if len(b1[2]) == 8 or len(b2[2]) == 8 or len(b3[2]) == 8:
+            return 0
 
     new_segment = triple_projection(b1, b2, b3)
     if new_segment == 0:
