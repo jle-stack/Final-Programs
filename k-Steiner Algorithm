@@ -2959,7 +2959,7 @@ def triple_merge(b1, b2, b3):
             left_check = (right_check[0] + 1) % len(hull_vertices)
             if hull_vertices[left_check] == b3[3][0]:
                 return 0
-    
+
     if adj_deg4_on == True:
         if len(b1[2]) == 8 or len(b2[2]) == 8 or len(b3[2]) == 8:
             return 0
@@ -5137,7 +5137,7 @@ def k_steiner(N, k):
         print(f"Starting {current_k} Steiner pt generation - termination")
         for branch_1 in B[current_k]:
 
-            temp_list = [i for i in range(n)]
+            temp_list = [i for i in range(2, n)]
             max_index = max(branch_1[3])
             unvisited = [x for x in temp_list if x > max_index]
 
